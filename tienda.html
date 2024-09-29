@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElegantShop - Catálogo Profesional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tienda.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ClaudioVentas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#clothes">Ropa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#electronics">Electrodomésticos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#second-hand">Segunda Mano</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <button id="darkModeToggle" class="btn btn-outline-dark ms-3">
+                            <i class="bi bi-moon-fill"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-center" id="home">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Descubre Nuestros Productos</h1>
+            <p class="lead mb-4">Calidad y estilo para todos los gustos</p>
+            <a href="#products" class="btn btn-hero btn-lg">Ver Catálogo</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container" id="products">
+        <!-- Ropa -->
+        <h2 class="category-title" id="clothes">Ropa</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+            <div class="col">
+                <div class="card product-card">
+                    <img src="img/lacoste.jpg" class="card-img-top" alt="Camiseta Elegante">
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta Elegante</h5>
+                        <p class="card-text">Camiseta de algodón premium, perfecta para cualquier ocasión.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="price">$24.99</span>
+                            <div class="quantity-control">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-to-cart w-100" data-bs-toggle="modal" data-bs-target="#productModal1">
+                            <i class="bi bi-cart-plus me-2"></i>Añadir al Carrito
+                        </button>
+                    </div>
+                </div>               
+            </div>
+
+            <div class="col">
+                <div class="card product-card">
+                    <img src="img/lacoste.jpg" class="card-img-top" alt="Camiseta Elegante">
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta Elegante</h5>
+                        <p class="card-text">Camiseta de algodón premium, perfecta para cualquier ocasión.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="price">$24.99</span>
+                            <div class="quantity-control">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-to-cart w-100" data-bs-toggle="modal" data-bs-target="#productModal1">
+                            <i class="bi bi-cart-plus me-2"></i>Añadir al Carrito
+                        </button>
+                    </div>
+                </div>               
+            </div>
+
+            <div class="col">
+                <div class="card product-card">
+                    <img src="img/lacoste.jpg" class="card-img-top" alt="Camiseta Elegante">
+                    <div class="card-body">
+                        <h5 class="card-title">Camiseta Elegante</h5>
+                        <p class="card-text">Camiseta de algodón premium, perfecta para cualquier ocasión.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="price">$24.99</span>
+                            <div class="quantity-control">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-to-cart w-100" data-bs-toggle="modal" data-bs-target="#productModal1">
+                            <i class="bi bi-cart-plus me-2"></i>Añadir al Carrito
+                        </button>
+                    </div>
+                </div>               
+            </div>
+        </div>
+
+        <!-- Electrodomésticos -->
+        <h2 class="category-title" id="electronics">Electrodomésticos</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+            <div class="col">
+                <div class="card product-card">
+                    <img src="img/lampara.jpg" class="card-img-top" alt="Licuadora Potente">
+                    <div class="card-body">
+                        <h5 class="card-title">Licuadora Potente</h5>
+                        <p class="card-text">Licuadora de alta potencia con múltiples velocidades.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="price">$59.99</span>
+                            <div class="quantity-control">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-to-cart w-100" data-bs-toggle="modal" data-bs-target="#productModal2">
+                            <i class="bi bi-cart-plus me-2"></i>Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card product-card">
+                    <img src="img/lampara.jpg" class="card-img-top" alt="Licuadora Potente">
+                    <div class="card-body">
+                        <h5 class="card-title">Licuadora Potente</h5>
+                        <p class="card-text">Licuadora de alta potencia con múltiples velocidades.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="price">$59.99</span>
+                            <div class="quantity-control">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-to-cart w-100" data-bs-toggle="modal" data-bs-target="#productModal2">
+                            <i class="bi bi-cart-plus me-2"></i>Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card product-card">
+                    <img src="img/lampara.jpg" class="card-img-top" alt="Licuadora Potente">
+                    <div class="card-body">
+                        <h5 class="card-title">Licuadora Potente</h5>
+                        <p class="card-text">Licuadora de alta potencia con múltiples velocidades.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="price">$59.99</span>
+                            <div class="quantity-control">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-to-cart w-100" data-bs-toggle="modal" data-bs-target="#productModal2">
+                            <i class="bi bi-cart-plus me-2"></i>Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Productos de Segunda Mano -->
+        <h2 class="category-title" id="second-hand">Productos de Segunda Mano</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+            <div class="col">
+                <div class="card product-card">
+                    <img src="img/tomy1.jpg" class="card-img-top" alt="Bicicleta de Montaña">
+                    <div class="card-body">
+                        <h5 class="card-title">Bicicleta de Montaña</h5>
+                        <p class="card-text">Bicicleta en excelente estado, ideal para aventuras.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="price">$120.00</span>
+                            <div class="quantity-control">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-to-cart w-100" data-bs-toggle="modal" data-bs-target="#productModal3">
+                            <i class="bi bi-cart-plus me-2"></i>Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card product-card">
+                    <img src="img/tomy1.jpg" class="card-img-top" alt="Bicicleta de Montaña">
+                    <div class="card-body">
+                        <h5 class="card-title">Bicicleta de Montaña</h5>
+                        <p class="card-text">Bicicleta en excelente estado, ideal para aventuras.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="price">$120.00</span>
+                            <div class="quantity-control">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-to-cart w-100" data-bs-toggle="modal" data-bs-target="#productModal3">
+                            <i class="bi bi-cart-plus me-2"></i>Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card product-card">
+                    <img src="img/tomy1.jpg" class="card-img-top" alt="Bicicleta de Montaña">
+                    <div class="card-body">
+                        <h5 class="card-title">Bicicleta de Montaña</h5>
+                        <p class="card-text">Bicicleta en excelente estado, ideal para aventuras.</p>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="price">$120.00</span>
+                            <div class="quantity-control">
+                                <button>-</button>
+                                <span>1</span>
+                                <button>+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-add-to-cart w-100" data-bs-toggle="modal" data-bs-target="#productModal3">
+                            <i class="bi bi-cart-plus me-2"></i>Añadir al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales para los productos -->
+    <!-- Modal 1: Camiseta Elegante -->
+    <div class="modal fade" id="productModal1" tabindex="-1" aria-labelledby="productModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel1">Camiseta Elegante</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="img/lacoste.jpg" class="img-fluid mb-3" alt="Camiseta Elegante">
+                    <p>Camiseta de algodón premium, perfecta para cualquier ocasión.</p>
+                    <p><strong>Precio: $24.99</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='checkout.html'">Ir a Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Licuadora Potente -->
+    <div class="modal fade" id="productModal2" tabindex="-1" aria-labelledby="productModalLabel2" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel2">Licuadora Potente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="img/lampara.jpg" class="img-fluid mb-3" alt="Licuadora Potente">
+                    <p>Licuadora de alta potencia con múltiples velocidades.</p>
+                    <p><strong>Precio: $59.99</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='checkout.html'">Ir a Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Bicicleta de Montaña -->
+    <div class="modal fade" id="productModal3" tabindex="-1" aria-labelledby="productModalLabel3" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel3">Bicicleta de Montaña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="img/tomy1.jpg" class="img-fluid mb-3" alt="Bicicleta de Montaña">
+                    <p>Bicicleta en excelente estado, ideal para aventuras.</p>
+                    <p><strong>Precio: $120.00</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='checkout.html'">Ir a Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <!-- Footer -->
+       <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">ClaudioVentas</h5>
+                    <p class="small">Tu destino de compras en línea para productos de calidad y estilo incomparable.</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-uppercase mb-4">Navegación</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-light text-decoration-none mb-2 d-inline-block">Inicio</a></li>
+                        <li><a href="#clothes" class="text-light text-decoration-none mb-2 d-inline-block">Ropa</a></li>
+                        <li><a href="#electronics" class="text-light text-decoration-none mb-2 d-inline-block">Electrodomésticos</a></li>
+                        <li><a href="#second-hand" class="text-light text-decoration-none mb-2 d-inline-block">Segunda Mano</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-uppercase mb-4">Ayuda</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none mb-2 d-inline-block">Seguimiento de Pedidos</a></li>
+                        <li><a href="#" class="text-light text-decoration-none mb-2 d-inline-block">Devoluciones</a></li>
+                        <li><a href="#" class="text-light text-decoration-none mb-2 d-inline-block">Envío</a></li>
+                        <li><a href="#" class="text-light text-decoration-none mb-2 d-inline-block">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h6 class="text-uppercase mb-4">Boletín</h6>
+                    <p class="small">Suscríbete para recibir nuestras últimas ofertas y novedades.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" aria-describedby="button-addon2">
+                            <button class="btn btn-primary" type="button" id="button-addon2">Suscribirse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bg-darker py-3 mt-5">
+            <div class="container text-center">
+                <p class="small mb-0">&copy; 2024 Claudio Peña. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/56912345678" class="whatsapp-float" target="_blank">
+        <i class="bi bi-whatsapp whatsapp-icon"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/tienda.js"></script>
+</body>
+</html>

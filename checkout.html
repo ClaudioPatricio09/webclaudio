@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - ElegantShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ClaudioVentas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tienda.html">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container checkout-container">
+        <h2 class="text-center mb-4">Finalizar Compra</h2>
+        
+        <div class="step-indicator mb-5">
+            <div class="step active">
+                <div class="step-icon">
+                    <i class="bi bi-cart"></i>
+                </div>
+                <p>Resumen</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <i class="bi bi-truck"></i>
+                </div>
+                <p>Envío</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <i class="bi bi-credit-card"></i>
+                </div>
+                <p>Pago</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Resumen del Pedido</h5>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>Cantidad</th>
+                                        <th class="text-end">Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cartItems">
+                                    <!-- Los items del carrito se insertarán aquí dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-4">Información de Pago</h5>
+                        <form id="paymentForm">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="country" class="form-label">País</label>
+                                    <select class="form-select" id="country" required>
+                                        <option value="">Selecciona un país</option>
+                                        <option value="ES">España</option>
+                                        <option value="MX">México</option>
+                                        <option value="AR">Argentina</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="currency" class="form-label">Moneda</label>
+                                    <select class="form-select" id="currency" required>
+                                        <option value="EUR">Euro (EUR)</option>
+                                        <option value="USD">Dólar estadounidense (USD)</option>
+                                        <option value="MXN">Peso mexicano (MXN)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Tipo de Tarjeta</label>
+                                <div class="btn-group w-100" role="group" aria-label="Tipo de Tarjeta">
+                                    <input type="radio" class="btn-check" name="cardType" id="creditCard" value="credit" checked>
+                                    <label class="btn btn-outline-primary" for="creditCard">Crédito</label>
+                                    <input type="radio" class="btn-check" name="cardType" id="debitCard" value="debit">
+                                    <label class="btn btn-outline-primary" for="debitCard">Débito</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cardName" class="form-label">Nombre en la tarjeta</label>
+                                <input type="text" class="form-control" id="cardName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cardNumber" class="form-label">Número de tarjeta</label>
+                                <input type="text" class="form-control" id="cardNumber" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="expirationDate" class="form-label">Fecha de expiración</label>
+                                    <input type="text" class="form-control" id="expirationDate" placeholder="MM/AA" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="cvv" class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" required>
+                                </div>
+                            </div>
+                            <div class="credit-card-logos">
+                                <img src="/img/payment.png" alt="Visa" id="visaLogo">
+                            </div>
+                            <div class="security-indicator">
+                                <i class="bi bi-lock-fill"></i>
+                                <small>Tu información está segura y encriptada.</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 mt-4">Pagar Ahora</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Información de Envío</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="fullName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Dirección</label>
+                                <input type="text" class="form-control" id="address" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="city" class="form-label">Ciudad</label>
+                                <input type="text" class="form-control" id="city" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="zip" class="form-label">Código Postal</label>
+                                <input type="text" class="form-control" id="zip" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Confirmar Envío</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Resumen de Costos</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Subtotal
+                                <span id="subtotal">$0.00</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Envío
+                                <span id="shipping">$0.00</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Impuestos
+                                <span id="taxes">$0.00</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center fw-bold">
+                                Total
+                                <span id="total">$0.00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Acerca ClaudioVentas</h5>
+                    <p>Somos tu destino para moda elegante y accesible. Ofrecemos las últimas tendencias con la mejor calidad y servicio.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Comprar</h5>
+                    <ul>
+                        <li><a href="#">Mujer</a></li>
+                        <li><a href="#">Hombre</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                        <li><a href="#">Novedades</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Ayuda</h5>
+                    <ul>
+                        <li><a href="#">Seguimiento de Pedidos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Únete a Nosotros</h5>
+                    <p>Suscríbete para recibir ofertas exclusivas y las últimas novedades.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Tu email" aria-label="Tu email" aria-describedby="button-addon2">
+                            <button class="btn btn-primary" type="button" id="button-addon2">Suscribirse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 ClaudioVentas. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/checkout.js"></script>
+    </body>
+    </html>

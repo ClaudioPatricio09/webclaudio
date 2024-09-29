@@ -1,0 +1,569 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #50c878;
+    --background-color: #ffffff;
+    --text-color: #ffffff;
+    --navbar-color: rgba(74, 144, 226, 1); /* Fondo azul por defecto */
+    --navbar-text-color: #ffffff; /* Texto blanco */
+    --navbar-hover-color: #50c878; /* Color al hacer hover */
+}
+
+body.dark-mode {
+    --primary-color: #2c3e50;
+    --secondary-color: #27ae60;
+    --background-color: #1a1a1a;
+    --text-color: #f0f0f0;
+    --navbar-color: rgba(44, 62, 80, 1); /* Fondo más oscuro en dark mode */
+    --navbar-text-color: #f0f0f0;
+    --navbar-hover-color: #3498db;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+}
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: #2c3e50 !important;
+}
+.navbar {
+    background-color: var(--navbar-color); /* Fondo del navbar */
+    box-shadow: none; /* Elimina la sombra */
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    color: var(--navbar-text-color); /* Color del texto de "ClaudioVentas" */
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+.navbar-light .navbar-brand {
+    color: rgb(255 255 255 / 90%);
+}
+
+.navbar-nav .nav-link {
+    color: var(--navbar-text-color); /* Color de los enlaces */
+    font-weight: 500;
+    margin-right: 1rem;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--navbar-hover-color); /* Color al hacer hover */
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--navbar-text-color);
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show>.nav-link {
+    color: var(--navbar-hover-color); /* Color para el enlace activo */
+}
+
+.navbar-toggler {
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #ffffffc2;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: box-shadow .15s ease-in-out;
+}
+
+#themeToggle {
+    font-size: 1.5em;
+    border: none;
+    color: var(--navbar-text-color);
+    background: none;
+    padding: 0;
+}
+
+#themeToggle:hover {
+    color: var(--navbar-hover-color);
+}
+
+.fa-sun:before {
+    margin-left: -15px;
+    content: "\f185";
+}
+
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/img/portadaprincipal.jpg') center/cover no-repeat;
+    color: white;
+    padding: 150px 0 100px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+/* Estilo del título con forma de botón */
+#productos .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff; /* Texto en blanco para mayor contraste */
+    background-color: var(--primary-color); /* Color de fondo (botón) */
+    padding: 15px 30px;
+    border-radius: 50px; /* Bordes redondeados para simular un botón */
+    display: inline-block; /* Importante para que se comporte como un botón */
+    text-transform: uppercase;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave al hacer hover */
+    margin-bottom: 40px;
+    text-align: center; /* Asegura que el texto esté centrado */
+}
+
+/* Asegura que el título esté centrado en su contenedor */
+#productos .container {
+    text-align: center; /* Centra todo el contenido dentro del contenedor */
+}
+
+/* Efecto hover (cambio de color y aumento de sombra) */
+#productos .section-title:hover {
+    background-color: var(--secondary-color); /* Color secundario al hacer hover */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15); /* Aumenta la sombra al pasar el ratón */
+}
+
+/* Línea decorativa opcional después del título (puedes omitirla si no es necesaria) */
+#productos .section-title::after {
+    background-color: var(--secondary-color);
+    display: block;
+    margin: 20px auto 0;
+    border-radius: 50px;
+}
+
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+body.dark-mode .card {
+    background-color: #000000;
+    color: #ddd;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+body.dark-mode .card img {
+    filter: brightness(0.8);
+}
+
+.card-body {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.card-body h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.card-body .btn {
+    align-self: center;
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .card-body .btn {
+    background-color: var(--secondary-color);
+}
+
+.card-body .btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 30px;
+    padding: 10px 30px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Nosotros Section */
+/* Modo oscuro para la sección Nosotros */
+body.dark-mode #nosotros {
+    background-color: #333; /* Fondo oscuro para la sección */
+}
+
+body.dark-mode #nosotros h2,
+body.dark-mode #nosotros h4,
+body.dark-mode #nosotros p {
+    color: #ffffff; /* Cambia los títulos y párrafos a blanco */
+}
+
+#nosotros {
+    background-color: #f8f9fa00;
+    padding: 60px 0;
+}
+
+#nosotros .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+#nosotros .section-title::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    display: block;
+    margin: 20px auto 0;
+}
+
+#nosotros .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+#nosotros h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+#nosotros p {
+    font-size: 1.2rem;
+    color: #000000;
+    line-height: 1.8;
+}
+
+#nosotros .col-md-4 {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#nosotros .col-md-4:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    #nosotros {
+        padding: 40px 0;
+    }
+
+    #nosotros .section-title {
+        font-size: 2rem;
+    }
+
+    #nosotros h4 {
+        font-size: 1.25rem;
+    }
+}
+
+
+/* Contact Form */
+body.dark-mode .text-primary {
+    color: white !important;
+}
+
+.form-label {
+    color: black;
+    margin-bottom: .5rem;
+}
+
+.text-primary {
+    font-family: fantasy;
+    --bs-text-opacity: 1;
+    color: rgb(0 0 0) !important;
+}
+
+.contact-form {
+    background-color: var(--contact-form-background-color);
+    color: var(--contact-form-text-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+    border-radius: 5px;
+    border: 1px solid var(--contact-form-text-color);
+    background-color: var(--contact-form-background-color);
+    color: var(--contact-form-text-color);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--contact-form-text-color);
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.map-container iframe {
+    border-radius: 8px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .feature-item {
+        margin-bottom: 20px;
+    }
+}
+
+/* Features Section */
+#features {
+    border-radius: 10px;
+    background: linear-gradient(to right, #5f433c, #38281c, #101a2e);
+}
+
+#features .row {
+    margin-left: -5px;
+    /* Ajuste lateral para que las tarjetas estén más cerca */
+    margin-right: -5px;
+}
+
+#features .col-md-4 {
+    padding-left: 5px;
+    /* Reduce el espacio entre columnas */
+    padding-right: 5px;
+}
+
+.container {
+    max-width: 1140px;
+    /* Ajusta el ancho máximo del contenedor si es necesario */
+    margin: 0 auto;
+    /* Centra el contenedor */
+}
+
+.feature-item {
+    background-color: #00000000;
+    /* Color de fondo para cada ítem de característica */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    border: 1px solid #2b1f1a00;
+}
+
+.feature-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.feature-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.feature-description {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .feature-item {
+        margin-bottom: 20px;
+    }
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+footer h5 {
+    color: #ffc107;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+footer p,
+footer li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffc107;
+}
+
+.footer-top {
+    padding: 4rem 0;
+}
+
+.footer-bottom {
+    background-color: #141414;
+    padding: 1.5rem 0;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+}
+
+.payment-icons i {
+    font-size: 2rem;
+    margin: 0 5px;
+    color: #f8f9fa;
+}
+
+.newsletter-form .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #f8f9fa;
+}
+
+.newsletter-form .btn {
+    background-color: #ffc107;
+    color: #1a1a1a;
+    font-weight: bold;
+}
+
+.newsletter-form .btn:hover {
+    background-color: #e0a800;
+}
+
+.quick-links li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info li {
+    margin-bottom: 1rem;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #ffc107;
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.whatsapp-icon {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
